@@ -36,19 +36,19 @@ namespace TrainerManagementApp
             throw new NotImplementedException();
         }
 
-        protected void btnsave_Click(object sender, EventArgs e)
+        protected void btnSave_Click(object sender, EventArgs e)
         {
             //write your code here
             throw new NotImplementedException();
         }
 
-        protected void btnupdate_Click(object sender, EventArgs e)
+        protected void btnUpdate_Click(object sender, EventArgs e)
         {
             //write your code here
             throw new NotImplementedException();
         }
 
-        protected void btndlt_Click(object sender, EventArgs e)
+        protected void btnDelete_Click(object sender, EventArgs e)
         {
             //write your code here
             throw new NotImplementedException();
