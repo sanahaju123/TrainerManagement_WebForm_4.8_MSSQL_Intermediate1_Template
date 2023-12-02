@@ -1,4 +1,3 @@
-﻿
 using Moq;
 using System;
 using System.Collections.Generic;
@@ -8,6 +7,7 @@ using TrainerManagementApp.DAL.Services;
 using Xunit;
 using Xunit.Abstractions;
 using System.Threading.Tasks;
+using TrainerManagementApp.Model;
 
 namespace TrainerManagementApp.Tests.TestCases
 {
@@ -15,6 +15,7 @@ namespace TrainerManagementApp.Tests.TestCases
     {
         private readonly ITestOutputHelper _output;
         private readonly ITrainerService _trainerService;
+        private readonly TrainerModel _trainer;
         public readonly Mock<ITrainerRepository> trainerservice = new Mock<ITrainerRepository>();
 
         private static string type = "Functional";
@@ -23,6 +24,13 @@ namespace TrainerManagementApp.Tests.TestCases
         {
             _trainerService = new TrainerService(trainerservice.Object);
             _output = output;
+            _trainer = new TrainerModel
+            {
+                Id = 1,
+                FirstName = "John",
+                LastName = "Doe",
+                DateOfBirth = new DateTime(1985, 5, 10)
+            };
         }
 
         [Fact]
@@ -205,11 +213,11 @@ namespace TrainerManagementApp.Tests.TestCases
             //Action
             try
             {
-                trainerservice.Setup(repos => repos.GetById("1"));
+                trainerservice.Setup(repos => repos.GetById("1")).Returns(_trainer);
                 var result = _trainerService.GetById("1");
 
                 //Assertion
-                if (result is string)
+                if (result is TrainerModel)
                 {
                     res = true;
                 }
@@ -247,11 +255,11 @@ namespace TrainerManagementApp.Tests.TestCases
             //Action
             try
             {
-                trainerservice.Setup(repos => repos.GetById("1"));
+                trainerservice.Setup(repos => repos.GetById("1")).Returns(_trainer);
                 var result = _trainerService.GetById("1");
 
                 //Assertion
-                if (result is string && id!=null)
+                if (result is TrainerModel && id!=null)
                 {
                     res = true;
                 }
