@@ -258,6 +258,10 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202311270208094_initial.cs" />
+    <Compile Include="Migrations\202311270208094_initial.designer.cs">
+      <DependentUpon>202311270208094_initial.cs</DependentUpon>
+    </Compile>
     <Compile Include="TrainerManagement.aspx.cs">
       <DependentUpon>TrainerManagement.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -267,10 +271,6 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202311051308219_initial.cs" />
-    <Compile Include="Migrations\202311051308219_initial.designer.cs">
-      <DependentUpon>202311051308219_initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\TrainerModel.cs" />
@@ -312,8 +312,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202311051308219_initial.resx">
-      <DependentUpon>202311051308219_initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202311270208094_initial.resx">
+      <DependentUpon>202311270208094_initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
